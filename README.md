@@ -20,6 +20,7 @@ THE PROGRAM IS UNDER GPL 3.0 LICENSE.
   - Select1.cpp
   - Select2.cpp
   - Select3.cpp
+  - Select4.cpp
   - RC4A.cpp
   - RC4plus.cpp
   - Spritz.cpp
