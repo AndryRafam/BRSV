@@ -32,6 +32,8 @@ THE PROGRAM IS UNDER GPL 3.0 LICENSE.
 
 - Makefile
 
+- Output.png
+
 # How to run it on Linux (Debian / Ubuntu)
 - 1) Download the program
 - 2) In command line, go to the folder containing the downloaded program
