@@ -10,7 +10,7 @@ THE PROGRAM IS UNDER GPL 3.0 LICENSE.
 # Files included
 - Source folder:
   - Cipher folder: Contains encryption fucntions and their dependencies
-  - Print folder: Contains print functions and thei dependencies 
+  - Print folder: Contains print functions and their dependencies 
  
 - Main folder
   - Main.cpp
