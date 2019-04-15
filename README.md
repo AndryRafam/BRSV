@@ -9,23 +9,9 @@ THE PROGRAM IS UNDER GPL 3.0 LICENSE.
 
 # Files included
 - Source folder:
-  - Blowfish.h
-  - Core.h (Mother class)
-  - ORIG_S_P (Original Sbox / Pbox)
-  - RC4A.h (Child class)
-  - RC4plus.h (Child class)
-  - Spritz.h (Child class)
-  - VMPC.h (Child class)
-  - Blowfish.cpp
-  - Select1.cpp
-  - Select2.cpp
-  - Select3.cpp
-  - Select4.cpp
-  - RC4A.cpp
-  - RC4plus.cpp
-  - Spritz.cpp
-  - VMPC.cpp
-  
+ - Cipher folder: Contains encryption fucntions and their dependencies
+ - Print folder: Contains print functions and thei dependencies 
+ 
 - Main folder
   - Main.cpp
   - print.h
