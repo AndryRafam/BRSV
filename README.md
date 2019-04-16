@@ -7,19 +7,6 @@ Lightweight random multiple choice encryption program based on Blowfish, RC4A, R
 
 THE PROGRAM IS UNDER GPL 3.0 LICENSE.
 
-# Files included
-- Source folder:
-  - Cipher folder: Contains encryption fucntions and their dependencies
-  - Print folder: Contains print functions and their dependencies 
- 
-- Main folder
-  - Main.cpp
-  - print.h
-
-- Makefile
-
-- Output.png
-
 # How to run it on Linux (Debian / Ubuntu)
 - 1) Download the program
 - 2) In command line, go to the folder containing the downloaded program
