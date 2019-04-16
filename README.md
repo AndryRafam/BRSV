@@ -11,4 +11,4 @@ THE PROGRAM IS UNDER GPL 3.0 LICENSE.
 - 1) Download the program
 - 2) In command line, go to the folder containing the downloaded program
 - 3) Type make and press enter to compile
-- 4) Type ./PROG and press enter to run
+- 4) Type ./exe and press enter to run
