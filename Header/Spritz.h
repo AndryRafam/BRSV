@@ -3,7 +3,7 @@
 
 #include "Core.h"
 
-class Spritz: public Core
+class Spritz: virtual public Core // Declares Core class as virtual base class in order to avoid Diamond Problem
 {
 	public:
 		void Encrypt (uchar *plaintext, char *Spritz_key, uchar *ciphertext);
