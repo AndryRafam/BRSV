@@ -3,7 +3,7 @@
 
 #include "Core.h"
 
-class VMPC: public Core
+class VMPC: virtual public Core // Declares Core class as virtual base class in order to avoid Diamond Problem
 {
 	public:
 		void Encrypt (uchar *plaintext, char *key, uchar *ciphertext);
