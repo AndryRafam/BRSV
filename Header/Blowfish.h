@@ -3,7 +3,7 @@
 
 #include "Core.h"
 
-class Blowfish: public Core
+class Blowfish: virtual public Core // Declares Core class as virtual base class in order to avoid Diamond Problem
 {
 	public:	
 		void Blowfish_Init (uchar *key, int keybytes);
