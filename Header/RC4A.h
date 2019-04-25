@@ -3,7 +3,7 @@
 
 #include "Core.h"
 
-class RC4A: public Core
+class RC4A: virtual public Core // Declares Core class as virtual base class in order to avoid Diamond Problem
 {
 	public:
 		void Encrypt (uchar *plaintext, char *RC4A_key, uchar *ciphertext);
