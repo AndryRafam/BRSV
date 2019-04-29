@@ -24,7 +24,7 @@ int main ()
 	fprintf(stdout,"\n\t\t[ EAGLE ]");	
 	fprintf(stdout,"\n\t************************************");
 	fprintf(stdout,"\n\n\t [ Input a clear message ] >> ");
-	fgets ((char*)clear_message,MAX,stdin);
+	cin.get((char*)clear_message,MAX);
 
 	srand(time(NULL));
 	int random = rand() % 4;
