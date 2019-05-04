@@ -1,9 +1,8 @@
 #include <iostream>
 #include <cstring>
 #include <new>
+#include <utility>
 #include "../Header/VMPC.h"
-
-using namespace std;
 
 
 void VMPC::KSA (char *key, uchar S[256])
@@ -16,7 +15,7 @@ void VMPC::KSA (char *key, uchar S[256])
 	for (int i = 0; i < 256; i++)
 	{
 		j = ((j + S[i] + key[i % strlen((const char*)key)]) % 256);
-		swap(S[i],S[j]);
+		std::swap(S[i],S[j]);
 	}
 	return;
 }
@@ -31,7 +30,7 @@ void VMPC::PRGA (uchar S[256], uchar *plaintext, uchar *ciphertext)
 		j = S[(j + S[i]) % 256];
 		K = S[S[(S[j] + 1) % 256]];
 		ciphertext[n] = K^plaintext[n];
-		swap(S[i],S[j]);
+		std::swap(S[i],S[j]);
 		i = (i+1) % 256;
 	}
 	return;
@@ -51,7 +50,7 @@ char *VMPC::VMPC_key()
 	srand(time(NULL));
 	int count, key_gen;
 	int len_key = rand() % 128 + 5;
-	char *key = new(nothrow)char[len_key];
+	char *key = new(std::nothrow)char[len_key];
 
 	for (int i = 0; i < len_key; i++)
 	{
