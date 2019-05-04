@@ -2,9 +2,9 @@
 #include <new>
 #include <cstring>
 #include <algorithm>
+#include <utility>
 #include "../Header/Spritz.h"
 
-using namespace std;
 
 void Spritz::KSA (char *key, uchar S[256])
 {
@@ -16,7 +16,7 @@ void Spritz::KSA (char *key, uchar S[256])
 	for (int i = 0; i < 256; i++)
 	{
 		j = (j + S[i] + key[i % strlen((const char*)key)]) % 256;
-		swap (S[i],S[j]);
+		std::swap (S[i],S[j]);
 	}
 	return;
 }
@@ -31,13 +31,13 @@ void Spritz::PRGA (uchar S[256], uchar *plaintext, uchar *ciphertext)
 		do
 		{
 			w = rand() % 256 + 1; // w is relatively prime with S array size, which is 256
-		} while (__gcd(w,256) != 1);
+		} while (std::__gcd(w,256) != 1);
 		
 		i = (i + w) % 256;
 		j = (k + S[j] + S[i]) % 256;
 		k = (k + i + S[j]) % 256;
 
-		swap (S[i],S[j]);
+		std::swap (S[i],S[j]);
 
 		int z = S[(j + S[i + S[z + k]]) % 256];
 
@@ -61,7 +61,7 @@ char *Spritz::Spritz_key()
 	int key, count;
 	int len_key = rand() % 128 + 5;
 	
-	char *result = new(nothrow)char[len_key];
+	char *result = new(std::nothrow)char[len_key];
 
 	for (int p = 0; p < len_key; p++)
 	{
