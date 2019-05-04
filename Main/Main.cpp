@@ -12,19 +12,16 @@ GDB : Version 8.2 */
 
 #define MAX 2048
 
-
-using namespace std;
-
-int main ()
+int main (void)
 {
 	system("clear");
-	uchar *clear_message = new(nothrow)uchar[MAX];
+	uchar *clear_message = new(std::nothrow)uchar[MAX];
 
 	fprintf(stdout,"\n\t************************************");
 	fprintf(stdout,"\n\t\t[ EAGLE ]");	
 	fprintf(stdout,"\n\t************************************");
 	fprintf(stdout,"\n\n\t [ Input a clear message ] >> ");
-	cin.get((char*)clear_message,MAX);
+	std::cin.get((char*)clear_message,MAX);
 
 	srand(time(NULL));
 	int random = rand() % 4;
@@ -49,6 +46,5 @@ int main ()
 		fprintf(stdout, "\n\n\t [ ENCRYPTED MESSAGE (Blowfish_Spritz) ] >> ");
 		print4 (clear_message);
 	}
-	return 0;
-
+	delete [] clear_message;
 }
