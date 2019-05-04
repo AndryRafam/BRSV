@@ -1,9 +1,8 @@
 #include <iostream>
 #include <cstring>
 #include <new>
+#include <utility>
 #include "../Header/RC4A.h"
-
-using namespace std;
 
 
 void RC4A::KSA (char *key, uchar S[256])
@@ -15,7 +14,7 @@ void RC4A::KSA (char *key, uchar S[256])
 	for (int i = 0; i < 256; i++)
 	{
 		j = (j + S[i] + key[i % strlen((const char*)key)]) % 256;
-		swap (S[i],S[j]);
+		std::swap (S[i],S[j]);
 	}
 	return;
 }
@@ -29,7 +28,7 @@ void RC4A::PRGA_RC4A (uchar S1[256], uchar S2[256], uchar *plaintext, uchar *cip
 	{
 		i = (i + 1) % 256;
 		j1 = (j1 + S1[i]) % 256;
-		swap(S1[i],S1[j1]);
+		std::swap(S1[i],S1[j1]);
 		int K1 = S2[(S1[i] + S1[j1]) % 256];
 
 		ciphertext[n] = K1^plaintext[n];
@@ -39,7 +38,7 @@ void RC4A::PRGA_RC4A (uchar S1[256], uchar S2[256], uchar *plaintext, uchar *cip
 	{
 		i = (i + 1) % 256;
 		j2 = (j2 + S2[i]) % 256;
-		swap(S2[i],S2[j2]);
+		std::swap(S2[i],S2[j2]);
 		int K2 = S1[(S2[i] + S2[j2]) % 256];
 
 		ciphertext[k] = K2^ciphertext[k];
@@ -65,7 +64,7 @@ char *RC4A::RC4A_key()
 	int key, count;
 	int len_key = rand() % 128 + 5;
 
-	char *result = new(nothrow)char[len_key];
+	char *result = new(std::nothrow)char[len_key];
 
 	for (int i = 0; i < len_key; i++)
 	{
