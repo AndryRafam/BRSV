@@ -1,13 +1,13 @@
 #include <iostream>
 #include <new>
 #include <cstring>
+#include <utility>
 #include "../Header/Blowfish.h"
 #include "../Header/ORIG_S_P.h"
 
 #define N 16
 #define MaxBytes 56
 
-using namespace std;
 
 uint32_t P[N+2];
 uint32_t S[4][256];
@@ -42,10 +42,10 @@ void Blowfish::Blowfish_Encipher (uint32_t *L, uint32_t *R)
 	{
 		Xl = Xl^P[i];
 		Xr = F(Xl)^Xr;
-		swap (Xl, Xr);
+		std::swap (Xl, Xr);
 	}
 
-	swap (Xl, Xr);
+	std::swap (Xl, Xr);
 	Xr = Xr^P[N];
 	Xl = Xl^P[N+1];
 	*L = Xl;
@@ -104,7 +104,7 @@ uchar *Blowfish::Blowfish_key()
 {
 	srand(time(NULL));
 	int key_random = rand() % MaxBytes + 4;
-	uchar *key = new(nothrow)uchar[key_random];
+	uchar *key = new(std::nothrow)uchar[key_random];
 	int count, key1, key2;
 
 	for (int i = 0; i < key_random; i++)
@@ -148,5 +148,6 @@ void *Blowfish::crack_text (uchar *text, uint32_t *Left, uint32_t *Right, int le
 		}
 	}
 }
+
 
 
