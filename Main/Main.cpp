@@ -1,4 +1,3 @@
-
 /* Andry RAFAM ANDRIANJAFY - Eagle April 2019 (Updated May 2019)
 
 OS : Ubuntu 16.04 LTS
@@ -56,3 +55,4 @@ int main (void)
 	delete [] clear_message;
 	delete [] salt_message;
 }
+
