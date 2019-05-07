@@ -10,11 +10,11 @@ GDB : Version 8.2 */
 #include <ctime>
 #include <cstring>
 #include "../Header/print.h"
+#include "../Header/Otp.h"
 
 #define MAX 2048
 
-int main (void)
-{
+int main (void) {
 	system("clear");
 	uchar *clear_message = new(std::nothrow)uchar[MAX];
 	uchar *salt_message = new(std::nothrow)uchar[6+MAX];
@@ -23,33 +23,31 @@ int main (void)
 	std::cout << "\n\t\t[ EAGLE Encryption Program (Andry Rafam Andrianjafy ]" << std::endl;	
 	std::cout << "\n\t*******************************************************************" << std::endl;
 	
-	std::cout << "\n\n\t [ Input a clear message ] >> ";
+	std::cout << "\n\n\t [ Input a clear message ] → ";
 	std::cin.get((char*)clear_message,MAX);
-	strcpy((char*)salt_message,(char*)clear_message);
+	OTP (clear_message);
+	std::cout << "\n\n\t << APPLYING OTP ... DONE >> " << std:: endl;
+	strcpy((char*)salt_message,(char*)OTP(clear_message));
 	strcat((char*)salt_message,(char*)Salt());
-	std::cout << "\n\n\t [ Your salt message ] >> " << salt_message << std::endl;
+	std::cout << "\n\n\t << SALTING MESSAGE ... DONE >> " << std::endl;
 
 	srand(time(NULL));
 	int random = rand() % 4;
 
-	if (random == 0)
-	{
-		fprintf(stdout,"\n\n\t [ ENCRYPTED MESSAGE (Blowfish_RC4A) ] >> ");
+	if (random == 0) {
+		fprintf(stdout,"\n\n\t [ ENCRYPTED MESSAGE (Blowfish_RC4A) ] → ");
 		print1 (salt_message);
 	}
-	else if (random == 1)
-	{
-		fprintf(stdout,"\n\n\t [ ENCRYPTED MESSAGE (Blowfish_RC4plus) ] >> ");
+	else if (random == 1) {
+		fprintf(stdout,"\n\n\t [ ENCRYPTED MESSAGE (Blowfish_RC4plus) ] → ");
 		print2 (salt_message);
 	}
-	else if (random == 2)
-	{
-		fprintf(stdout,"\n\n\t [ ENCRYPTED MESSAGE (Blowfish_VMPC) ] >> ");
+	else if (random == 2) {
+		fprintf(stdout,"\n\n\t [ ENCRYPTED MESSAGE (Blowfish_VMPC) ] → ");
 		print3 (salt_message);
 	}
-	else if (random == 3)
-	{
-		fprintf(stdout, "\n\n\t [ ENCRYPTED MESSAGE (Blowfish_Spritz) ] >> ");
+	else if (random == 3) {
+		fprintf(stdout, "\n\n\t [ ENCRYPTED MESSAGE (Blowfish_Spritz) ] → ");
 		print4 (salt_message);
 	}
 	delete [] clear_message;
