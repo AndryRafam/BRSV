@@ -1,4 +1,3 @@
-# BRSV
 Lightweight random multiple choice encryption program based on Blowfish, RC4A, RC4plus, Spritz and VMPC. 
 The program apply OTP first on the clear message before choosing randomly between the following combination:
   - Blowfish_RC4A
