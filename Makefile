@@ -1,5 +1,6 @@
 SRC:= $(wildcard Cipher/* .cpp) \
 	 $(wildcard Print/* .cpp) \
+	 $(wildcard OTP/* .cpp) \
 	 $(wildcard Main/* .cpp)
       
  
@@ -10,4 +11,3 @@ exe: $(OBJECTS)
 
 clean:
 	rm -f $(OBJ) exe
-
