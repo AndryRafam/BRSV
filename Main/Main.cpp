@@ -9,6 +9,7 @@ GDB : Version 8.2 */
 #include <iostream>
 #include <ctime>
 #include <cstring>
+#include <algorithm>
 #include "../Header/print.h"
 #include "../Header/Otp.h"
 
@@ -16,6 +17,7 @@ GDB : Version 8.2 */
 
 int main (void) {
 	system("clear");
+	srand(time(0));
 	uchar *clear_message = new(std::nothrow)uchar[MAX];
 	uchar *salt_message = new(std::nothrow)uchar[6+MAX];
 	
@@ -25,6 +27,8 @@ int main (void) {
 	
 	std::cout << "\n\n\t [ Input a clear message ] → ";
 	std::cin.get((char*)clear_message,MAX);
+	std::random_shuffle(clear_message,clear_message+strlen((const char*)clear_message));
+	std::cout << "\n\n\t [ Shuffled clear message ] → " << clear_message << std::endl;
 	OTP (clear_message);
 	std::cout << "\n\n\t << APPLYING OTP ... DONE >> " << std:: endl;
 	strcpy((char*)salt_message,(char*)OTP(clear_message));
