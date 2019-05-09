@@ -22,7 +22,7 @@ int main (void) {
 	uchar *salt_message = new(std::nothrow)uchar[6+MAX];
 	
 	std::cout << "\n\t*******************************************************************" << std::endl;
-	std::cout << "\n\t\t[ EAGLE Encryption Program (Andry Rafam Andrianjafy ]" << std::endl;	
+	std::cout << "\n\t\t[ Tomahawk (Andry Rafam Andrianjafy ]" << std::endl;	
 	std::cout << "\n\t*******************************************************************" << std::endl;
 	
 	std::cout << "\n\n\t [ Input a clear message ] → ";
