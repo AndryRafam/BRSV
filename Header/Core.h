@@ -26,9 +26,7 @@ class Core
 	protected:
 		uint32_t F (uint32_t x);
 		void KSA (char *key, uchar S[256]);
-		void PRGA_RC4A (uchar S1[256], uchar S2[256], uchar *plaintext, uchar *ciphertext);
 		void PRGA (uchar S[256], uchar *plaintext, uchar *ciphertext);
-
 };
 
 #endif
