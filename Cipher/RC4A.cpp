@@ -19,7 +19,7 @@ void RC4A::KSA (char *key, uchar S[256])
 	return;
 }
 
-void RC4A::PRGA_RC4A (uchar S1[256], uchar S2[256], uchar *plaintext, uchar *ciphertext)
+void RC4A::PRGA (uchar S1[256], uchar S2[256], uchar *plaintext, uchar *ciphertext)
 {
 	int i = 0;
 	int j1 = 0, j2 = 0;
@@ -53,7 +53,7 @@ void RC4A::Encrypt (uchar *plaintext, char *RC4A_key, uchar *ciphertext)
 
 	KSA (RC4A_key, S1);
 	KSA (RC4A_key, S2);
-	PRGA_RC4A (S1,S2,plaintext,ciphertext);
+	PRGA (S1,S2,plaintext,ciphertext);
 	
 	return;
 }
