@@ -11,7 +11,7 @@ class RC4A: virtual public Core // Declares Core class as virtual base class in 
 
 	protected:
 		void KSA (char *key, uchar S[256]);
-		void PRGA_RC4A (uchar S1[256], uchar S2[256], uchar *plaintext, uchar *ciphertext);
+		void PRGA (uchar S1[256], uchar S2[256], uchar *plaintext, uchar *ciphertext); // Function overloaded
 };
 
 #endif
