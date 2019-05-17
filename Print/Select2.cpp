@@ -30,7 +30,7 @@ void print2 (uchar *input)
 	B->Blowfish_Init (key_temp_Blowfish, len_Blowfish_key);
 	B->crack_text (cipher, &L, &R, strlen((const char*)cipher));
 	B->Blowfish_Encipher (&L, &R);
-	fprintf(stdout,"%08X %08X\n\n\n", R, L); // Print the right part first, then the left part of the encrypted message
+	fprintf(stdout,"%08x %08x\n\n\n", R, L); // Print the right part first, then the left part of the encrypted message
 
 	delete [ ] key_temp_RC4plus;
 	delete [ ] key_temp_Blowfish;
