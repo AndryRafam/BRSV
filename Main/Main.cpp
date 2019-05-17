@@ -27,12 +27,13 @@ int main (void) {
 	
 	std::cout << "\n\n\t [ Input a clear message ] → ";
 	std::cin.get((char*)clear_message,MAX);
-	std::random_shuffle(clear_message,clear_message+strlen((const char*)clear_message));
+	std::random_shuffle(clear_message,clear_message+strlen((const char*)clear_message)); // Shuffle the clear message
 	std::cout << "\n\n\t [ Shuffled clear message ] → " << clear_message << std::endl;
 	OTP (clear_message);
 	std::cout << "\n\n\t << APPLYING OTP ... DONE >> " << std:: endl;
 	strcpy((char*)salt_message,(char*)OTP(clear_message));
 	strcat((char*)salt_message,(char*)Salt());
+	std::random_shuffle(salt_message,salt_message+strlen((const char*)salt_message)); // Shuffle the salt message
 	std::cout << "\n\n\t << SALTING MESSAGE ... DONE >> " << std::endl;
 
 	srand(time(NULL));
