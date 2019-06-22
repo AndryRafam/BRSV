@@ -23,7 +23,7 @@ int main (void) {
 	uchar *salt_message = new(std::nothrow)uchar[6+MAX];
 
 	std::cout << Cyan << "\n\t*******************************************************************" << std::endl;
-	std::cout << Red << "\n\t\t[ Tomahawk (Andry Rafam Andrianjafy) ]" << std::endl;
+	std::cout << Red << "\n\t\t[ Beldorion (Andry Rafam Andrianjafy) ]" << std::endl;
 	std::cout << Cyan << "\n\t*******************************************************************" << std::endl;
 	std::cout << Reset;
 
