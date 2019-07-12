@@ -21,14 +21,16 @@ void print4 (uchar *input)
 	/* Performing Spritz */
 
 	S->Encrypt ((uchar*)input, key_temp_Spritz, cipher);
-	
+
 	int len_Blowfish_key = strlen((const char*)B->Blowfish_key());
 	uchar *key_temp_Blowfish = new(std::nothrow)uchar[len_Blowfish_key];
 	memcpy (key_temp_Blowfish, B->Blowfish_key(), len_Blowfish_key);
 
 	B->crack_text (cipher, &L, &R, strlen((const char*)cipher));
 	B->Blowfish_Encipher (&L, &R);
-	fprintf(stdout, "%08x %08x\n\n\n", R, L); // Print the right part first, then the left part of the encrypted message
+	fprintf(stdout,"\n\n");
+	fprintf(stdout, "\t\t\t\t%08X\n", R); // Print the right part first, then the left part of the encrypted message
+	fprintf(stdout,"\t\t\t\t%08X\n\n\n", L);
 
 	delete [ ] key_temp_Spritz;
 	delete [ ] key_temp_Blowfish;
