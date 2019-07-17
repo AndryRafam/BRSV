@@ -14,26 +14,30 @@ GDB : Version 8.2 */
 #include "../Header/Otp.h"
 #include "../Header/Colors.h"
 
-#define MAX 2048
 
-int main (void) {
+int main (int argc, char **args) {
+	if (argc != 2){
+		std::cout << "\n";
+		std::cout << "Usage : " << args[0] << Red << " < Clear message > " << std::endl;
+		std::cout << Reset;
+		std::cout << "\n";
+		exit(0);
+	}
 	system("clear");
 	srand(time(0));
-	uchar *clear_message = new(std::nothrow)uchar[MAX];
-	uchar *salt_message = new(std::nothrow)uchar[6+MAX];
+	uchar *salt_message = new(std::nothrow)uchar[6+strlen((const char*)args[1])];
 
 	std::cout << Cyan << "\n\t*******************************************************************" << std::endl;
 	std::cout << Red << "\n\t\t\t[ SR-71 (Andry Rafam Andrianjafy) ]" << std::endl;
 	std::cout << Cyan << "\n\t*******************************************************************" << std::endl;
 	std::cout << Reset;
 
-	std::cout << Yellow << "\n\n\t\t [ Input a clear message ] → "; std::cout << Reset;
-	std::cin.get((char*)clear_message,MAX);
-	std::random_shuffle(clear_message,clear_message+strlen((const char*)clear_message)); // Shuffle the clear message
-	std::cout << Yellow << "\n\n\t\t [ Shuffled clear message ] → " << Reset << clear_message << std::endl;
-	OTP (clear_message);
+	std::cout << Yellow << "\n\n\t\t [ Clear message ] → " << Reset << args[1] << std::endl;
+	std::random_shuffle(args[1],args[1]+strlen((const char*)args[1])); // Shuffle the clear message
+	std::cout << Yellow << "\n\n\t\t [ Shuffled clear message ] → " << Reset << args[1] << std::endl;
+	OTP ((uchar*)args[1]);
 	std::cout << "\n\n\t\t << APPLYING OTP ... DONE >> " << std:: endl;
-	strcpy((char*)salt_message,(char*)OTP(clear_message));
+	strcpy((char*)salt_message,(char*)OTP((uchar*)args[1]));
 	strcat((char*)salt_message,(char*)Salt()); // Shuffle the salt message
 	std::random_shuffle(salt_message,salt_message+strlen((const char*)salt_message));
 	std::cout << "\n\n\t\t << SALTING MESSAGE ... DONE >> " << std::endl;
@@ -57,6 +61,5 @@ int main (void) {
 		std::cout << Green << "\n\n\t\t [ ENCRYPTED MESSAGE (Blowfish_Spritz) ]"; std::cout << Reset;
 		print4 (salt_message); std::cout << Reset;
 	}
-	delete [] clear_message;
 	delete [] salt_message;
 }
