@@ -7,7 +7,7 @@ The program apply OTP first on the clear message before choosing randomly betwee
 
 THE PROGRAM IS UNDER GPL 3.0 LICENSE.
 
-![Output](Home/Program/PROJECT/Image/SR-71.png?raw=true)
+![Output](./Home/Program/PROJECT/Image/SR-71.png?raw=true)
 
 # How to run it on Linux (Debian / Ubuntu)
 - 1) Download the program
