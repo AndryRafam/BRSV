@@ -7,7 +7,7 @@ Lightweight random multiple choice encryption program based on Blowfish, RC4A, R
 
 THE PROGRAM IS UNDER GPL 3.0 LICENSE.
 
-![Output](/Home/Program/PROJECT/Image/SR-71.png?raw=true)
+![Example](https://github.com/AndryRafam/SR-71/Output.png)
 
 # How to run it on Linux (Debian / Ubuntu)
 - 1) Download the program
