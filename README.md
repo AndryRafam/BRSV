@@ -1,4 +1,7 @@
 # SR-71
+
+![Output](https://github.com/AndryRafam/Program-Output/blob/master/Output.gif)
+
 Lightweight random multiple choice encryption program based on Blowfish, RC4A, RC4plus, Spritz and VMPC. The program choose randomly between the following combination:
   - Blowfish_RC4A
   - Blowfish_RC4plus
