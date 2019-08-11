@@ -18,7 +18,7 @@ GDB : Version 8.2 */
 int main (int argc, char **args) {
 	if (argc != 2){
 		std::cout << "\n";
-		std::cout << "Usage : " << args[0] << Red << " < Clear message > " << std::endl;
+		std::cout << "Usage : " << args[0] << Red << " < Clear message within coma > " << std::endl;
 		std::cout << Reset;
 		std::cout << "\n";
 		exit(0);
