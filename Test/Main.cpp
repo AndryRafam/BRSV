@@ -28,7 +28,7 @@ int main (int argc, char **args) {
 	uchar *salt_message = new(std::nothrow)uchar[6+strlen((const char*)args[1])];
 
 	std::cout << Cyan << "\n\t*******************************************************************" << std::endl;
-	std::cout << Red << "\n\t\t\t[ SR-71 (Andry Rafam Andrianjafy) ]" << std::endl;
+	std::cout << Red << "\n\t\t\t[ CastleBravo (Andry Rafam Andrianjafy) ]" << std::endl;
 	std::cout << Cyan << "\n\t*******************************************************************" << std::endl;
 	std::cout << Reset;
 
