@@ -1,4 +1,4 @@
-/* Andry RAFAM ANDRIANJAFY - SR-71
+/* Andry RAFAM ANDRIANJAFY - CastleBravo
 
 OS : Ubuntu 16.04 LTS
 
@@ -45,21 +45,28 @@ int main (int argc, char **args) {
 	srand(time(NULL));
 	int random = rand() % 4;
 
-	if (random == 0) {
-		std::cout << Green << "\n\n\t\t [ ENCRYPTED MESSAGE (Blowfish_RC4A) ]"; std::cout << Reset;
-		print1 (salt_message); std::cout << Reset;
-	}
-	else if (random == 1) {
-		std::cout << Green << "\n\n\t\t [ ENCRYPTED MESSAGE (Blowfish_RC4plus) ]"; std::cout << Reset;
-		print2 (salt_message); std::cout << Reset;
-	}
-	else if (random == 2) {
-		std::cout << Green << "\n\n\t\t [ ENCRYPTED MESSAGE (Blowfish_VMPC) ]"; std::cout << Reset;
-		print3 (salt_message); std::cout << Reset;
-	}
-	else if (random == 3) {
-		std::cout << Green << "\n\n\t\t [ ENCRYPTED MESSAGE (Blowfish_Spritz) ]"; std::cout << Reset;
-		print4 (salt_message); std::cout << Reset;
-	}
+	switch(random) {
+		case 0: 
+			std::cout << Green << "\n\n\t\t [ ENCRYPTED MESSAGE (Blowfish_RC4A) ]"; std::cout << Reset;
+			print1 (salt_message); std::cout << Reset;
+			break;
+			
+		case 1: 
+			std::cout << Green << "\n\n\t\t [ ENCRYPTED MESSAGE (Blowfish_RC4plus) ]"; std::cout << Reset;
+			print2 (salt_message); std::cout << Reset;
+			break;
+			
+		case 2:
+			std::cout << Green << "\n\n\t\t [ ENCRYPTED MESSAGE (Blowfish_VMPC) ]"; std::cout << Reset;
+			print3 (salt_message); std::cout << Reset;
+			break;
+			
+		case 3:
+			std::cout << Green << "\n\n\t\t [ ENCRYPTED MESSAGE (Blowfish_Spritz) ]"; std::cout << Reset;
+			print4 (salt_message); std::cout << Reset;
+			break;
+			
 	delete [] salt_message;
+	}
+	return 0;
 }
