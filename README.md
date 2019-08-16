@@ -1,4 +1,4 @@
-
+![Text](https://github.com/AndryRafam/Program-Output/blob/master/CastleBravo.gif)
 
 Double random multiple choice encryption program. The program choose randomly a twin combination between the following encryption algorithm: Blowfish, RC4A, RC4+, Spritz, VMPC. Only the final result is outputted.
 
