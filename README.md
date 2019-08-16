@@ -4,6 +4,12 @@ Double random multiple choice encryption program. The program choose randomly a 
 
 THE PROGRAM IS UNDER GPL 3.0 LICENSE.
 
+# What are the intermediate stages ?
+- 1) Shuffle randomly the clear message
+- 2) Apply OTP (One Time Pad) to the shuffled clear message
+- 3) Salt the OTP message
+- 4) Shuffle randomly the salt message
+
 # How to run it on Linux (Debian / Ubuntu)
 - 1) Download the program
 - 2) In command line, go to the folder containing the downloaded program
