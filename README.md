@@ -1,8 +1,4 @@
-Lightweight random multiple choice encryption program based on Blowfish, RC4A, RC4plus, Spritz and VMPC. The program choose randomly between the following combination:
-  - Blowfish_RC4A
-  - Blowfish_RC4plus
-  - Blowfish_VMPC
-  - Blowfish_Spritz
+Double random multiple choice encryption program. The program choose randomly a twin combination between the following encryption algorithm: Blowfish, RC4A, RC4+, Spritz, VMPC. Only the final result is outputted.
 
 THE PROGRAM IS UNDER GPL 3.0 LICENSE.
 
