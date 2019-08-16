@@ -26,46 +26,70 @@ int main (int argc, char **args) {
 	system("clear");
 	srand(time(0));
 	uchar *salt_message = new(std::nothrow)uchar[6+strlen((const char*)args[1])];
-
-	std::cout << Cyan << "\n\t*******************************************************************" << std::endl;
-	std::cout << Red << "\n\t\t\t[ CastleBravo (Andry Rafam Andrianjafy) ]" << std::endl;
-	std::cout << Cyan << "\n\t*******************************************************************" << std::endl;
-	std::cout << Reset;
-
+	about();
 	std::cout << Yellow << "\n\n\t\t [ Clear message ] → " << Reset << args[1] << std::endl;
+	
+	/* Intermediate Stage */
 	std::random_shuffle(args[1],args[1]+strlen((const char*)args[1])); // Shuffle the clear message
-	std::cout << Yellow << "\n\n\t\t [ Shuffled clear message ] → " << Reset << args[1] << std::endl;
 	OTP ((uchar*)args[1]);
-	std::cout << "\n\n\t\t << APPLYING OTP ... DONE >> " << std:: endl;
 	strcpy((char*)salt_message,(char*)OTP((uchar*)args[1]));
 	strcat((char*)salt_message,(char*)Salt()); // Shuffle the salt message
 	std::random_shuffle(salt_message,salt_message+strlen((const char*)salt_message));
-	std::cout << "\n\n\t\t << SALTING MESSAGE ... DONE >> " << std::endl;
+	std::cout << "\n\n\t\t << INTERMEDIATE STAGE ... COMPLETED >> " << std::endl;
 
 	srand(time(NULL));
-	int random = rand() % 4;
+	int random = rand() % 10+1;
 
 	switch(random) {
-		case 0: 
-			std::cout << Green << "\n\n\t\t [ ENCRYPTED MESSAGE (Blowfish_RC4A) ]"; std::cout << Reset;
+		case 1:
+			std::cout << Green << "\n\n\t\t [ ENCRYPTED MESSAGE ]"; std::cout << Reset;
 			print1 (salt_message); std::cout << Reset;
 			break;
-			
-		case 1: 
-			std::cout << Green << "\n\n\t\t [ ENCRYPTED MESSAGE (Blowfish_RC4plus) ]"; std::cout << Reset;
+
+		case 2:
+			std::cout << Green << "\n\n\t\t [ ENCRYPTED MESSAGE ]"; std::cout << Reset;
 			print2 (salt_message); std::cout << Reset;
 			break;
-			
-		case 2:
-			std::cout << Green << "\n\n\t\t [ ENCRYPTED MESSAGE (Blowfish_VMPC) ]"; std::cout << Reset;
+
+		case 3:
+			std::cout << Green << "\n\n\t\t [ ENCRYPTED MESSAGE ]"; std::cout << Reset;
 			print3 (salt_message); std::cout << Reset;
 			break;
-			
-		case 3:
-			std::cout << Green << "\n\n\t\t [ ENCRYPTED MESSAGE (Blowfish_Spritz) ]"; std::cout << Reset;
+
+		case 4:
+			std::cout << Green << "\n\n\t\t [ ENCRYPTED MESSAGE ]"; std::cout << Reset;
 			print4 (salt_message); std::cout << Reset;
 			break;
+
+		case 5:
+			std::cout << Green << "\n\n\t\t [ ENCRYPTED MESSAGE ]"; std::cout << Reset;
+			print5 (salt_message); std::cout << Reset;
+			break;
+		
+		case 6:
+			std::cout << Green << "\n\n\t\t [ ENCRYPTED MESSAGE ]"; std::cout << Reset;
+			print6 (salt_message); std::cout << Reset;
+			break;
 			
+		case 7:
+			std::cout << Green << "\n\n\t\t [ ENCRYPTED MESSAGE ]"; std::cout << Reset;
+			print7 (salt_message); std::cout << Reset;
+			break;
+			
+		case 8:
+			std::cout << Green << "\n\n\t\t [ ENCRYPTED MESSAGE ]"; std::cout << Reset;
+			print8 (salt_message); std::cout << Reset;
+			break;
+			
+		case 9:
+			std::cout << Green << "\n\n\t\t [ ENCRYPTED MESSAGE ]"; std::cout << Reset;
+			print9 (salt_message); std::cout << Reset;
+			break;
+			
+		case 10:
+			std::cout << Green << "\n\n\t\t [ ENCRYPTED MESSAGE ]"; std::cout << Reset;
+			print10 (salt_message); std::cout << Reset;
+			break;
 	delete [] salt_message;
 	}
 	return 0;
