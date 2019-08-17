@@ -33,8 +33,8 @@ int main (int argc, char **args) {
 	std::random_shuffle(args[1],args[1]+strlen((const char*)args[1])); // Shuffle the clear message
 	OTP ((uchar*)args[1]);
 	strcpy((char*)salt_message,(char*)OTP((uchar*)args[1]));
-	strcat((char*)salt_message,(char*)Salt()); // Shuffle the salt message
-	std::random_shuffle(salt_message,salt_message+strlen((const char*)salt_message));
+	strcat((char*)salt_message,(char*)Salt()); 
+	std::random_shuffle(salt_message,salt_message+strlen((const char*)salt_message)); // Shuffle the salt message
 	std::cout << "\n\n\t\t << INTERMEDIATE STAGE ... COMPLETED >> " << std::endl;
 
 	srand(time(NULL));
@@ -42,52 +42,52 @@ int main (int argc, char **args) {
 
 	switch(random) {
 		case 1:
-			std::cout << Green << "\n\n\t\t [ ENCRYPTED MESSAGE ]"; std::cout << Reset;
+			std::cout << Green << "\n\n\t\t [ ENCRYPTED MESSAGE ] → "; std::cout << Reset;
 			print1 (salt_message); std::cout << Reset;
 			break;
 
 		case 2:
-			std::cout << Green << "\n\n\t\t [ ENCRYPTED MESSAGE ]"; std::cout << Reset;
+			std::cout << Green << "\n\n\t\t [ ENCRYPTED MESSAGE ] → "; std::cout << Reset;
 			print2 (salt_message); std::cout << Reset;
 			break;
 
 		case 3:
-			std::cout << Green << "\n\n\t\t [ ENCRYPTED MESSAGE ]"; std::cout << Reset;
+			std::cout << Green << "\n\n\t\t [ ENCRYPTED MESSAGE ] → "; std::cout << Reset;
 			print3 (salt_message); std::cout << Reset;
 			break;
 
 		case 4:
-			std::cout << Green << "\n\n\t\t [ ENCRYPTED MESSAGE ]"; std::cout << Reset;
+			std::cout << Green << "\n\n\t\t [ ENCRYPTED MESSAGE ] → "; std::cout << Reset;
 			print4 (salt_message); std::cout << Reset;
 			break;
 
 		case 5:
-			std::cout << Green << "\n\n\t\t [ ENCRYPTED MESSAGE ]"; std::cout << Reset;
+			std::cout << Green << "\n\n\t\t [ ENCRYPTED MESSAGE ] → "; std::cout << Reset;
 			print5 (salt_message); std::cout << Reset;
 			break;
 		
 		case 6:
-			std::cout << Green << "\n\n\t\t [ ENCRYPTED MESSAGE ]"; std::cout << Reset;
+			std::cout << Green << "\n\n\t\t [ ENCRYPTED MESSAGE ] → "; std::cout << Reset;
 			print6 (salt_message); std::cout << Reset;
 			break;
 			
 		case 7:
-			std::cout << Green << "\n\n\t\t [ ENCRYPTED MESSAGE ]"; std::cout << Reset;
+			std::cout << Green << "\n\n\t\t [ ENCRYPTED MESSAGE ] → "; std::cout << Reset;
 			print7 (salt_message); std::cout << Reset;
 			break;
 			
 		case 8:
-			std::cout << Green << "\n\n\t\t [ ENCRYPTED MESSAGE ]"; std::cout << Reset;
+			std::cout << Green << "\n\n\t\t [ ENCRYPTED MESSAGE ] → "; std::cout << Reset;
 			print8 (salt_message); std::cout << Reset;
 			break;
 			
 		case 9:
-			std::cout << Green << "\n\n\t\t [ ENCRYPTED MESSAGE ]"; std::cout << Reset;
+			std::cout << Green << "\n\n\t\t [ ENCRYPTED MESSAGE ] → "; std::cout << Reset;
 			print9 (salt_message); std::cout << Reset;
 			break;
 			
 		case 10:
-			std::cout << Green << "\n\n\t\t [ ENCRYPTED MESSAGE ]"; std::cout << Reset;
+			std::cout << Green << "\n\n\t\t [ ENCRYPTED MESSAGE ] → "; std::cout << Reset;
 			print10 (salt_message); std::cout << Reset;
 			break;
 	delete [] salt_message;
