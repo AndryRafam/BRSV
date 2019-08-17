@@ -27,7 +27,6 @@ void print9(uchar *input){
     case 0:
       S->Encrypt((uchar*)input, key_temp_Spritz, Spritz_cipher);
       Rplus->Encrypt((uchar*)Spritz_cipher, key_temp_RC4plus, Rplus_cipher);
-      fprintf(stdout, "\n\n\t\t");
       for (auto x = 0; x < strlen((const char*)Rplus_cipher); x++)
         fprintf(stdout, "%02X", *(Rplus_cipher + x));
       std::cout << std::endl << std::endl;
@@ -36,7 +35,6 @@ void print9(uchar *input){
     case 1:
       Rplus->Encrypt((uchar*)input, key_temp_RC4plus, Rplus_cipher);
       S->Encrypt((uchar*)Rplus_cipher, key_temp_Spritz, Spritz_cipher);
-      fprintf(stdout, "\n\n\t\t");
       for (auto x = 0; x < strlen((const char*)Spritz_cipher); x++)
         fprintf(stdout, "%02X", *(Spritz_cipher + x));
       std::cout << std::endl << std::endl;
