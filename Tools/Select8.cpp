@@ -27,7 +27,6 @@ void print8(uchar *input){
     case 0:
       RA->Encrypt((uchar*)input, key_temp_RC4A, RC4A_cipher);
       S->Encrypt((uchar*)RC4A_cipher, key_temp_Spritz, Spritz_cipher);
-      fprintf(stdout, "\n\n\t\t");
       for (auto x = 0; x < strlen((const char*)Spritz_cipher); x++)
         fprintf(stdout, "%02X", *(Spritz_cipher + x));
       std::cout << std::endl << std::endl;
@@ -36,7 +35,6 @@ void print8(uchar *input){
     case 1:
       S->Encrypt((uchar*)input, key_temp_Spritz, Spritz_cipher);
       RA->Encrypt((uchar*)Spritz_cipher, key_temp_RC4A, RC4A_cipher);
-      fprintf(stdout, "\n\n\t\t");
       for (auto x = 0; x < strlen((const char*)RC4A_cipher); x++)
         fprintf(stdout, "%02X", *(RC4A_cipher + x));
       std::cout << std::endl << std::endl;
