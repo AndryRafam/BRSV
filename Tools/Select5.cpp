@@ -27,7 +27,6 @@ void print5(uchar *input){
     case 0:
       RA->Encrypt((uchar*)input, key_temp_RC4A, RC4A_cipher);
       Rplus->Encrypt((uchar*)RC4A_cipher, key_temp_RC4plus, Rplus_cipher);
-      fprintf(stdout, "\n\n\t\t");
       for (auto x = 0; x < strlen((const char*)Rplus_cipher); x++)
         fprintf(stdout, "%02X", *(Rplus_cipher + x));
       std::cout << "\n\n";
@@ -36,9 +35,8 @@ void print5(uchar *input){
     case 1:
       Rplus->Encrypt((uchar*)input, key_temp_RC4plus, Rplus_cipher);
       RA->Encrypt((uchar*)Rplus_cipher, key_temp_RC4A, RC4A_cipher);
-      fprintf(stdout, "\n\n\t\t");
       for (auto x = 0; x < strlen((const char*)RC4A_cipher); x++)
-        fprintf(stdout, "%02X", *(RC4A_cipher + x));
+        fprintf(stdout, "%02X", *(RC4A_cipher + 0));
       std::cout << std::endl << std::endl;
       exit(0);
   }
