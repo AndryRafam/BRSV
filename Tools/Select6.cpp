@@ -27,7 +27,6 @@ void print6(uchar *input){
     case 0:
       V->Encrypt((uchar*)input, key_temp_VMPC, VMPC_cipher);
       S->Encrypt((uchar*)VMPC_cipher, key_temp_Spritz, Spritz_cipher);
-      fprintf(stdout, "\n\n\t\t");
       for (auto x = 0; x < strlen((const char*)Spritz_cipher); x++)
         fprintf(stdout, "%02X", *(Spritz_cipher +x));
       std::cout << "\n\n";
@@ -36,7 +35,6 @@ void print6(uchar *input){
     case 1:
       S->Encrypt((uchar*)input, key_temp_Spritz, Spritz_cipher);
       V->Encrypt((uchar*)Spritz_cipher, key_temp_VMPC, VMPC_cipher);
-      fprintf(stdout, "\n\n\t\t");
       for (auto x = 0; x < strlen((const char*)VMPC_cipher); x++)
         fprintf(stdout, "%02X", *(VMPC_cipher +x));
       std::cout << "\n\n";
