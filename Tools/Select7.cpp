@@ -27,7 +27,6 @@ void print7(uchar *input){
     case 0:
       RA->Encrypt((uchar*)input, key_temp_RC4A, RC4A_cipher);
       V->Encrypt((uchar*)RC4A_cipher, key_temp_VMPC, VMPC_cipher);
-      fprintf(stdout, "\n\n\t\t");
       for (auto x = 0; x < strlen((const char*)VMPC_cipher); x++)
         fprintf(stdout, "%02X", *(VMPC_cipher +x));
       std::cout << "\n\n";
@@ -36,7 +35,6 @@ void print7(uchar *input){
     case 1:
       V->Encrypt((uchar*)input, key_temp_VMPC, VMPC_cipher);
       RA->Encrypt((uchar*)VMPC_cipher, key_temp_RC4A, RC4A_cipher);
-      fprintf(stdout, "\n\n\t\t");
       for (auto x = 0; x < strlen((const char*)RC4A_cipher); x++)
         fprintf(stdout, "%02X", *(RC4A_cipher + x));
       std::cout << std::endl << std::endl;
