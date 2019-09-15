@@ -36,7 +36,7 @@ void print5(uchar *input){
       Rplus->Encrypt((uchar*)input, key_temp_RC4plus, Rplus_cipher);
       RA->Encrypt((uchar*)Rplus_cipher, key_temp_RC4A, RC4A_cipher);
       for (auto x = 0; x < strlen((const char*)RC4A_cipher); x++)
-        fprintf(stdout, "%02X", *(RC4A_cipher + 0));
+        fprintf(stdout, "%02X", *(RC4A_cipher + x));
       std::cout << std::endl << std::endl;
       exit(0);
   }
