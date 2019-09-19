@@ -15,4 +15,4 @@ Double random multiple choice encryption program. The program choose randomly a 
 - 4) Type ./exe and press enter to run
 
 # WARRANTY
-THE PROGRAM IS UNDER GPL 3.0 LICENSE AND IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND.
+THE SOFTWARE IS UNDER GPL 3.0 LICENSE AND IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND.
