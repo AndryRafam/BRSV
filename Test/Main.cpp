@@ -25,7 +25,7 @@ int main (int argc, char **args) {
 	}
 	system("clear");
 	srand(time(0));
-	uchar *salt_message = new(std::nothrow)uchar[6+strlen((const char*)args[1])];
+	uchar *salt_message = new(std::nothrow)uchar[16+strlen((const char*)args[1])];
 	about();
 	std::cout << Yellow << "\n\n\t\t [ Clear message ] → " << Reset << args[1] << std::endl;
 	
