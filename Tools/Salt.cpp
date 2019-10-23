@@ -7,11 +7,11 @@ typedef unsigned char uchar;
 
 uchar *Salt() {
 	
-	uchar *string = new(std::nothrow)uchar[6];
+	uchar *string = new(std::nothrow)uchar[16];
 	srand(time(0));
 	int i = 0;
 
-	while (i < 6) {
+	while (i < 16) {
 		int random = rand() % 2;
 		int key = rand() % 26;
 
