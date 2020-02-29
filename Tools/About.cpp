@@ -4,7 +4,7 @@
 
 void about(){
 	std::cout << Cyan << "\n\t*******************************************************************" << std::endl;
-	std::cout << Red << "\n\t\t\t[ CERBERUS (Andry Rafam Andrianjafy) ]" << std::endl;
+	std::cout << Red << "\n\t\t\t[ Epsilon (Andry Rafam Andrianjafy) ]" << std::endl;
 	std::cout << Reset;
 	std::cout << "\n\n\t\t Double random encryption program. The program choose"  << std::endl;
 	std::cout << "\t\t randomly a twin combination between the following" << std::endl; 
