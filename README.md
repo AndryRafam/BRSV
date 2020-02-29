@@ -1,7 +1,7 @@
 Double random encryption program based on Blowfish (symmetric key block cipher), Spritz, VMPC(Variably Modified Permutation Composition), RC4+ and RC4A. The program randomly chooses a twofold combination between the encryption algorithms listed above. 
 A salt function (adding a random extra bit at the end of the clear message) and a random_shuffle function (shuffling randomly the letters of the salt message) are also integrated within the program; in order to change drastically the nature of the clear message and thus, reducing the risk of collision. Intermediate stages are not outputted. Only the final result is outputted.
 
-![Output](https://github.com/AndryRafam/Program-Output/blob/master/epsilon.gif)
+![Output](https://github.com/AndryRafam/Program-Output/blob/master/epsilonTTY.gif)
 
 # What are the intermediate stages ?
 - 1) Shuffle randomly the clear message
