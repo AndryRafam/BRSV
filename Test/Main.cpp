@@ -30,6 +30,7 @@ int main (int argc, char **args) {
 	std::cout << Yellow << "\n\n\t\t [ Clear message ] → " << Reset << args[1] << std::endl;
 
 	/* Intermediate Stage */
+	
 	// Fisher-Yates shuffle algorithm. Shuffle the clear message
 	for(int i = strlen((const char*)args[1]-1); i > 0; i--){
 		int j = rand()%(i+1);
@@ -47,7 +48,7 @@ int main (int argc, char **args) {
 	}
 	
 	std::cout << "\n\n\t\t << INTERMEDIATE STAGE ... COMPLETED >> " << std::endl;
-
+	
 	srand(time(0));
 	int random = rand() % 10+1;
 
