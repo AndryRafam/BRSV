@@ -1,10 +1,10 @@
 /* Andry RAFAM ANDRIANJAFY - Epsilon
 
-OS : Ubuntu 16.04 LTS
+OS : Xubuntu 20.04 LTS
 
-GCC : Version 6.5.0
+Compiler : Version 9.3
 
-GDB : Version 8.2 */
+GDB : Version 9.1 */
 
 #include <iostream>
 #include <ctime>
@@ -30,14 +30,25 @@ int main (int argc, char **args) {
 	std::cout << Yellow << "\n\n\t\t [ Clear message ] → " << Reset << args[1] << std::endl;
 
 	/* Intermediate Stage */
-	std::random_shuffle(args[1],args[1]+strlen((const char*)args[1])); // Shuffle the clear message
+	// Fisher-Yates shuffle algorithm. Shuffle the clear message
+	for(int i = strlen((const char*)args[1]-1); i > 0; i--){
+		int j = rand()%(i+1);
+		std::swap(args[1][i],args[1][j]);
+	}
+	
 	OTP ((uchar*)args[1]);
 	strcpy((char*)salt_message,(char*)OTP((uchar*)args[1]));
 	strcat((char*)salt_message,(char*)Salt());
-	std::random_shuffle(salt_message,salt_message+strlen((const char*)salt_message)); // Shuffle the salt message
+	
+	// Fisher-Yates shuffle algorithm. Shuffle the salt message
+	for(int i = strlen((const char*)salt_message)-1; i > 0; i--){
+		int j = rand()%(i+1);
+		std::swap(salt_message[i],salt_message[j]);
+	}
+	
 	std::cout << "\n\n\t\t << INTERMEDIATE STAGE ... COMPLETED >> " << std::endl;
 
-	srand(time(NULL));
+	srand(time(0));
 	int random = rand() % 10+1;
 
 	switch(random) {
